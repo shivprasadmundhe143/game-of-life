@@ -16,13 +16,13 @@ pipeline {
 		
 		stage ('continous deploy') {
 			steps {  
-				sh 'cp /root/.jenkins/workspace/game-of-life/gameoflife-web/target/gameoflife.war /mnt/apache-tomcat-9.0.71/webapps'
+				sh 'cp /root/.jenkins/workspace/Demo_tomcat/gameoflife-web/target/gameoflife.war /mnt/apache-tomcat-9.0.71/webapps'
 				}
 				}
 				
 		stage ('continous Deliver on QA') {
 			steps {
-				sh 'scp /root/.jenkins/workspace/game-of-life/gameoflife-web/target/gameoflife.war ansible@172.31.95.132://mnt/apache-tomcat-9.0.71/webapps'
+				sh 'scp /root/.jenkins/workspace/Demo_tomcat/gameoflife-web/target/gameoflife.war ubuntu@172.31.88.175:/mnt/apache-tomcat-9.0.71/webapps'
 				}
 				}
 				}
